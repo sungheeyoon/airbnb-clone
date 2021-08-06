@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import LargeCard from "../components/LargeCard";
 import MediumCard from "../components/MediumCard";
@@ -48,6 +49,8 @@ export default function Home({ exploreData, cardsData }) {
           buttonText="Get Inspired"
         />
       </main>
+
+      <Footer />
     </div>
   );
 }
@@ -59,7 +62,7 @@ export const getStaticProps = async () => {
   const cardsData = await fetch("https://links.papareact.com/zp1").then((res) =>
     res.json()
   );
-  // json object image,location,distance
+  // json object image,location,distance etc..
   return {
     props: {
       exploreData,
