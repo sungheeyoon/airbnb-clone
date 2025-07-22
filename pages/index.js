@@ -56,12 +56,48 @@ export default function Home({ exploreData, cardsData }) {
 }
 
 export const getStaticProps = async () => {
-  const exploreData = await fetch("https://links.papareact.com/pyp").then(
-    (res) => res.json()
-  );
-  const cardsData = await fetch("https://links.papareact.com/zp1").then((res) =>
-    res.json()
-  );
+  // Local image data - 아래 파일명에 해당하는 이미지를 폴더에 넣어주세요
+  const exploreData = [
+    {
+      img: "/images/explore/london.jpg",
+      location: "London",
+      distance: "45-minute drive",
+    },
+    {
+      img: "/images/explore/manchester.jpg",
+      location: "Manchester",
+      distance: "4.5-hour drive",
+    },
+    {
+      img: "/images/explore/liverpool.jpg",
+      location: "Liverpool",
+      distance: "4.5-hour drive",
+    },
+    {
+      img: "/images/explore/york.jpg",
+      location: "York",
+      distance: "4-hour drive",
+    }
+  ];
+
+  const cardsData = [
+    {
+      img: "https://links.papareact.com/2io",
+      title: "Outdoor getaways"
+    },
+    {
+      img: "https://links.papareact.com/q7j",
+      title: "Unique stays"
+    },
+    {
+      img: "https://links.papareact.com/s03",
+      title: "Entire homes"
+    },
+    {
+      img: "https://links.papareact.com/8ix",
+      title: "Pet allowed"
+    }
+  ];
   // json object image,location,distance etc..
   return {
     props: {
